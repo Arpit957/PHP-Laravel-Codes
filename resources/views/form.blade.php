@@ -17,43 +17,10 @@
         <form action="{{ url('/') }}/register" method="POST">
             @csrf
 
-
-
-            <!-- <div class="form-group mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="{{ old('name') }}">
-        <span class="text-danger">
-            @error('name')
-                {{ $message }}
-            @enderror
-    </div> -->
-
-            <!-- <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
-        <span class="text-danger">
-            @error('email')
-                {{ $message }}
-            @enderror
-    </div>
-    <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
-        <span class="text-danger">
-            @error('password')
-                {{ $message }}
-            @enderror
-    </div>
-    <div class="mb-3">
-    <label for="password_confirmation" class="form-label">Confirm Password</label>
-    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Confirm your password">
-    <span class="text-danger">
-        @error('password_confirmation')
-            {{ $message }}
-        @enderror
-    </span> -->
-
-
+            <x-input type="text" name="name" label="Please Enter your Name"/>
+            <x-input type="email" name="email" label="Please Enter your Email"/>
+            <x-input type="password" name="password" label="Please Enter your Password"/>
+            <x-input type="password" name="password" label="Please Confirm your Password"/>
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
