@@ -47,6 +47,14 @@
                     Inactive
                     @endif
         </td>
+
+        <td>
+            <a href = "{{ url('/customer/delete/'.$customer->id) }}"><button>
+                Delete
+            </button></a>
+               
+        </td>
+
         </tr>
     </tbody>
 </table>

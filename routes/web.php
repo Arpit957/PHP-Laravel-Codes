@@ -80,3 +80,5 @@ Route::get('/customer',[CustomerController::class,'view']);
 Route::get('/', function () {    
     return view('/index');
 });
+
+Route::get('/customer/delete/{id}', [CustomerController::class, 'delete'])->name('customer.delete');
