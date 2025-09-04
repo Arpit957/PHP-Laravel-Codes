@@ -7,6 +7,10 @@
 </head>
 <body>
     <div class = "container">
+
+    <a href="{{ route('customer.create') }}" class="btn btn-primary my-3">
+        Add Customer
+    </a>
       
     <table class="table">
     <thead class="table-dark">

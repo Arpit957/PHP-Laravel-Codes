@@ -68,7 +68,15 @@ Route::get('/register', [RegistrationController::class, 'index']);
 
 Route::post('/register', [RegistrationController::class, 'register']);
 
+//it means we are giving a name to this route
+//so that we can use this name in our blade file to create a link to this route
+//like this: <a href="{{ route('customer.create') }}">Add Customer</a>
+Route::get('/customer/create',[CustomerController::class,'create'])->name('customer.create');
 
-Route::get('/customer/create',[CustomerController::class,'create']);
+
 Route::post('/customer', [CustomerController::class, 'store']);
-Route::get('/customer/view',[CustomerController::class,'viewCustomer']);
+Route::get('/customer',[CustomerController::class,'view']);
+
+Route::get('/', function () {    
+    return view('/index');
+});
