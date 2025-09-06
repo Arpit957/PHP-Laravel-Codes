@@ -12,5 +12,12 @@ class Customer extends Model
     protected $table = "customers";
     protected $primaryKey = "customer_id";
 
-
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtoupper($value);
+    }
+    public function getNameAttribute($value)
+    {
+        return strtolower($value);
+    }
 }
