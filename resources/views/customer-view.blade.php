@@ -39,7 +39,7 @@
                  @endif
         </td>
             <td>{{ $customer->address }}</td>
-            <td>{{ $customer->dob }}</td>
+            <td>{{ get_formatted_date($customer->dob,"d-M-y") }}</td>
             <td>
                 @if($customer->status == 1)
                     Active

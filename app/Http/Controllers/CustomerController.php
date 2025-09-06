@@ -17,6 +17,7 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
+        
         $customer = new Customer();
         $customer->name = $request['name'];
         $customer->email = $request['email'];
