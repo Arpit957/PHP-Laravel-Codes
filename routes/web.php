@@ -77,6 +77,7 @@ Route::get('/customer/create',[CustomerController::class,'create'])->name('custo
 
 Route::post('/customer', [CustomerController::class, 'store']);
 Route::get('/customer',[CustomerController::class,'view']);
+Route::get('/customer/trash',[CustomerController::class,'trash']);
 
 Route::get('/', function () {    
     return view('/index');
@@ -103,3 +104,4 @@ Route::get('destroy-session',function(){
     session()->forget('user_name');
     return redirect()->back()->with('success','Session has been destroyed');
 });
+

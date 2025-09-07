@@ -46,6 +46,16 @@ class CustomerController extends Controller
         return redirect('/customer/view');
     }
 
+     public function restore($id)
+    {
+        //find targets primary key
+        $customer = Customer::withTrashed()->find($id);
+        if ($customer) {
+            $customer->restore();
+        }
+        return redirect('/customer/view');
+    }
+
     public function edit($id)
     {
         $customer = Customer::find($id);
@@ -68,6 +78,23 @@ class CustomerController extends Controller
         $customer->address = $request['address'];
         }
         $customer->save();
+        return redirect('/customer/view');
+    }
+
+    public function trash()
+    {
+        $customers = Customer::onlyTrashed()->get();
+        $data = compact('customers');
+        return view('customer-trash')->with($data);
+    }
+
+     public function forceDelete($id)
+    {
+        //find targets primary key
+        $customer = Customer::find($id);
+        if ($customer) {
+            $customer->forceDelete();
+        }
         return redirect('/customer/view');
     }
 
