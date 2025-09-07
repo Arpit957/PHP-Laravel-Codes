@@ -6,6 +6,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;  
 use App\Models\Customer;
+use Illuminate\Http\Request;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -86,3 +87,19 @@ Route::get('/customer/delete/{id}', [CustomerController::class, 'delete'])->name
 Route::get('/customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
 
 Route::post('/customer/update/{id}', [CustomerController::class, 'update'])->name('customer.update');
+
+Route::get('/get-all-session',function(){
+    $value = session()->all();
+    p($value);
+});
+
+Route::get('/set-session',function(Request $request){
+    $request->session()->put('user_name','arpit');
+    $request->session()->flash('status','Success');
+    return redirect()->back()->with('success','Session has been set');
+});
+
+Route::get('destroy-session',function(){
+    session()->forget('user_name');
+    return redirect()->back()->with('success','Session has been destroyed');
+});
