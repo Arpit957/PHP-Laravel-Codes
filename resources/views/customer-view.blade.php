@@ -8,7 +8,13 @@
 <body>
     <div class = "container">
 
-    <a href="{{ route('customer.create') }}" class="btn btn-primary my-3">
+    <form action ="">
+        <input type="text" name="search" placeholder="Search by name or email" value ="{{ ('search') }}">
+        <button type="submit">Search</button>
+        <button type ="button" onclick="window.location='{{ url('/customer') }}> Reset </button> 
+    </form>
+
+    <a href ="{{ route('customer.create') }}" class="btn btn-primary my-3">
         Add Customer
     </a>
       
