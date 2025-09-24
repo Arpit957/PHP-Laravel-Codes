@@ -105,3 +105,12 @@ Route::get('destroy-session',function(){
     return redirect()->back()->with('success','Session has been destroyed');
 });
 
+Route::group(['prefix'=>'customer'],function(){
+    Route::get('/dashboard',function(){
+        return "This is admin dashboard";
+    });
+
+    Route::get('/settings',function(){
+        return "This is admin settings";
+    });
+});
