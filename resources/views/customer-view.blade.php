@@ -63,6 +63,10 @@
 
         </tr>
     </tbody>
+
+    <div class = "row">
+        {{ $customers->links() }}
+    </div>
 </table>
 
 

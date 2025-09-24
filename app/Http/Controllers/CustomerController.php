@@ -40,7 +40,8 @@ class CustomerController extends Controller
         }
         else
         {
-            $customers = Customer::all();
+           // $customers = Customer::all();
+            $customers = Customer::paginate(15);
         }
 
        // $search = $request->query('search');
