@@ -114,3 +114,13 @@ Route::group(['prefix'=>'customer'],function(){
         return "This is admin settings";
     });
 });
+
+Route::get('/no-access',function(){
+    echo "You are not allowed to access this page.";
+    die;
+});
+
+Route::get('/login',function(){
+    session()->put('user_id',1);
+    echo "Login Successful.";
+}); 
